@@ -10,8 +10,8 @@
 name: OpenWrt18.06-CI
 on:
    push:
-    branches: 
-      - master
+     branches: 
+       - master
   # schedule:
   #   - cron: 0 20 * * *
   # release:
@@ -121,10 +121,10 @@ jobs:
             CONFIG_EFI_IMAGES=y
             EOF
           # IPv6支持:
-          # cat >> .config <<EOF
-          # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
-          # CONFIG_PACKAGE_ipv6helper=y
-          # EOF
+            cat >> .config <<EOF
+            CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
+            CONFIG_PACKAGE_ipv6helper=y
+            EOF
           # 多文件系统支持:
           # cat >> .config <<EOF
           # CONFIG_PACKAGE_kmod-fs-nfs=y
@@ -143,7 +143,7 @@ jobs:
            CONFIG_PACKAGE_kmod-usb3=y
           EOF
           # 常用LuCI插件选择:
-           cat >> .config <<EOF
+            cat >> .config <<EOF
             CONFIG_PACKAGE_luci-app-adbyby-plus=y
             CONFIG_PACKAGE_luci-app-aria2=y
             CONFIG_PACKAGE_luci-app-baidupcs-web=y
